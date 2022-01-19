@@ -7,7 +7,7 @@ Then this [website](https://github.com/aureliendavid/gpac/wiki/Tiled-Streaming) 
 
 
 Assume that the decoded frame data has already been extracted. For demonstration, I stored the decoded frame and named it `packet_10`. This file contains one single dimensional array of size `11059200`. We want to get an RGB image of size `1920x3840` from this file.
-First, read the file using pickle, and convert it to `2880x3840`. Note that `2880 = 1920 * 1.5`.
+First, read the file using pickle, and reshape it to `2880x3840`. Note that `2880 = 1920 * 1.5`.
 ```
 import cv2
 import pickle
