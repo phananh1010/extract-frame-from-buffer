@@ -1,4 +1,4 @@
-# extract-frame-from-buffer
+# How to extract decoded frame data from playback buffer and convert it into RGB format
 
 It turns out that off-the-self streaming clients do not store decoded video frames in a buffer in RGB format. Popular encoders such as HVEC stored decoded frames in YUV format. I realized this when I was working with a 4K video of the size 1920x3840. When extracting decoded frames from the buffer, the returned result is a single dimensional data array of size 11059200. I noticed a mismatch in size here. There was no way I could resize this array into the shape (1920, 3840, 3), which is the expected size of a RGB frame. In fact, 11059200 if 1.5 times greater than 1920 * 3840.
 
